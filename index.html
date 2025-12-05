@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>To-Do App</title>
+  <title>Advanced To-Do App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,13 +18,68 @@
       <button id="theme-toggle">🌙 Dark</button>
     </div>
 
-    <div class="todo-input">
+    <!-- Search -->
+    <div class="search-row">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search tasks..."
+      />
+    </div>
+
+    <!-- Filters + Sort -->
+    <div class="toolbar">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="today">Today</button>
+      </div>
+      <div class="sort">
+        <label for="sort-select">Sort:</label>
+        <select id="sort-select">
+          <option value="created-desc">Newest</option>
+          <option value="created-asc">Oldest</option>
+          <option value="alpha-asc">A–Z</option>
+          <option value="alpha-desc">Z–A</option>
+          <option value="due-asc">By due date</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="todo-input main-input">
       <input
         type="text"
         id="task-input"
-        placeholder="Enter a new task..."
+        placeholder="Task title..."
       />
       <button id="add-task-btn">Add</button>
+    </div>
+
+    <div class="todo-input secondary-input">
+      <select id="category-select">
+        <option value="Work">Work</option>
+        <option value="Study">Study</option>
+        <option value="Personal">Personal</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <select id="priority-select">
+        <option value="medium">Medium priority</option>
+        <option value="high">High priority</option>
+        <option value="low">Low priority</option>
+      </select>
+
+      <input type="date" id="due-date-input" />
+    </div>
+
+    <div class="notes-row">
+      <textarea
+        id="notes-input"
+        rows="2"
+        placeholder="Notes / description (optional)..."
+      ></textarea>
     </div>
 
     <ul id="task-list">
